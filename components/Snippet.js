@@ -21,19 +21,19 @@ export default function Snippet({ snippet, snippetDeleted }) {
     }
   };
   return (
-    <div className='bg-gray-100 p-4 rounded-md my-2 shadow-lg'>
+    <div className='p-4 my-2 bg-gray-100 rounded-md shadow-lg'>
       <div className='flex items-center justify-between mb-2'>
-        <h2 className='text-xl text-gray-800 font-bold'>{snippet.data.name}</h2>
-        <span className='font-bold text-xs text-yellow-500 px-2 py-1 rounded-lg '>
+        <h2 className='text-xl font-bold text-gray-800'>{snippet.data.name}</h2>
+        <span className='px-2 py-1 text-xs font-bold text-yellow-500 rounded-lg '>
           {snippet.data.language}
         </span>
       </div>
-      <p className='text-gray-900 mb-4'>{snippet.data.description}</p>
+      <p className='mb-4 text-gray-900'>{snippet.data.description}</p>
       <Code code={snippet.data.code} />
       <Link href={`/edit/${snippet.id}`}>
-        <a className='text-gray-500 mr-2'>Edit</a>
+        <a className='mr-2 text-gray-500'>Edit</a>
       </Link>
-      <button onClick={deleteSnippet} className='text-red-400 ml-2 my-2'>
+      <button onClick={deleteSnippet} className='my-2 ml-2 text-red-400'>
         Delete
       </button>
     </div>
